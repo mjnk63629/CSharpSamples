@@ -29,21 +29,29 @@ namespace textFile
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string info = textBoxInfo.Text;
-            if (!File.Exists("C:\\Users\\MJ\\Documents\\Visual Studio 2015\\Projects\\CSharpSamples\\textFile.txt"))
+
+            string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "textFile.txt");
+
+
+            if (!File.Exists(filePath))
             {
-                File.CreateText("C:\\Users\\MJ\\Documents\\Visual Studio 2015\\Projects\\CSharpSamples\\textFile.txt");
-                TextWriter tw = new StreamWriter("C:\\Users\\MJ\\Documents\\Visual Studio 2015\\Projects\\CSharpSamples\\textFile.txt");
+                StreamWriter tw= File.CreateText(filePath);
+                //TextWriter tw = new StreamWriter(filePath);
                 tw.WriteLine(info);
                 tw.Close();
                 MessageBox.Show("Text Box Created And Your Text sucessfuly written");
             }
             else
             {
-                TextWriter tw = new StreamWriter("C:\\Users\\MJ\\Documents\\Visual Studio 2015\\Projects\\CSharpSamples\\textFile.txt" );
+                TextWriter tw = new StreamWriter(filePath,true);
                 tw.WriteLine(info);
                 tw.Close();
                 MessageBox.Show("Your Text was written in an Existing file successfuly");
             }
+
+
+
+            
         }
     }
 }
