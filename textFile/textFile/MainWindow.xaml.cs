@@ -39,7 +39,7 @@ namespace textFile
             }
             else
             {
-                TextWriter tw = new StreamWriter("C:\\Users\\MJ\\Documents\\Visual Studio 2015\\Projects\\CSharpSamples\\textFile.txt" , true);
+                TextWriter tw = new StreamWriter("C:\\Users\\MJ\\Documents\\Visual Studio 2015\\Projects\\CSharpSamples\\textFile.txt" );
                 tw.WriteLine(info);
                 tw.Close();
                 MessageBox.Show("Your Text was written in an Existing file successfuly");
