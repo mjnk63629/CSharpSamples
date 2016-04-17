@@ -40,6 +40,7 @@ namespace comboBox
             string lastName = textBoxLastName.Text;
             int age = Convert.ToInt32(textBoxAge.Text);
             int bornYear = Convert.ToInt32(textBoxBornYear.Text);
+            
             //string gender = comboBoxgender.Text;
 
             string gender = comboBoxgender.SelectedItem.ToString();
@@ -51,16 +52,16 @@ namespace comboBox
             newUser.BornYear = bornYear;
             newUser.Gender = gender;
 
-            string genderTest = comboBoxgender.Text;
-
-            if (genderTest == "Male")
+            
+            if (gender == "Male")
             {
                 windowJavad.Background = Brushes.Blue;
 
             }
-            else
+            else if (gender=="Female")
             {
-                windowJavad.Background = Brushes.Pink;
+              
+           windowJavad.Background = Brushes.Pink;
             }
         }
     }
