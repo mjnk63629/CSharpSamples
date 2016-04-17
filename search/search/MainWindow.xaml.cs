@@ -57,24 +57,57 @@ namespace search
             Statics.Fruits.Add(fruit3);
             Statics.Fruits.Add(fruit4);
             Statics.Fruits.Add(fruit5);
+       
 
-            foreach (Fruit fruit in Statics.Fruits)
+            GenerateListViewFruitsItems(Statics.Fruits);
+        }
+
+        public void GenerateListViewFruitsItems(List<Fruit> fruits)
+        {
+            foreach (Fruit fruit in fruits)
             {
                 string froutstr = string.Format("Fruit Name: {0},Fruit Color: {1},Fruit Season: {2}", fruit.FruitName,
                     fruit.FruitColor, fruit.FruitSeason);
                 listViewFruits.Items.Add(froutstr);
             }
-            {
-                
-            }
-
-
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-           listViewFruits.Items.Clear();
+            string searchText = textBoxSearch.Text.ToLower();
+            List<Fruit> tempFruits=new List<Fruit>();
+
+
+
+            foreach (Fruit f in Statics.Fruits)
+            {
+                bool isMatched = false;
+                if (f.FruitName.ToLower().Contains(searchText))
+                {
+                    isMatched = true;
+                }
+
+                if (f.FruitColor.ToLower().Contains(searchText))
+                {
+                    isMatched = true;
+                }
+
+                if (f.FruitSeason.ToLower().Contains(searchText))
+                {
+                    isMatched = true;
+                    
+                }
+
+                if (isMatched)
+                {
+                    tempFruits.Add(f);
+                    listViewFruits.Items.Clear();
+                    GenerateListViewFruitsItems(tempFruits);
+                }
+            }
             
+            
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace search
 {
-    class Fruit
+    public class Fruit
     {
         private string _fruitName;
         private string _fruitColor;
