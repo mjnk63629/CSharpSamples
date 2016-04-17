@@ -40,7 +40,9 @@ namespace comboBox
             string lastName = textBoxLastName.Text;
             int age = Convert.ToInt32(textBoxAge.Text);
             int bornYear = Convert.ToInt32(textBoxBornYear.Text);
-            string gender = comboBoxgender.Text;
+            //string gender = comboBoxgender.Text;
+
+            string gender = comboBoxgender.SelectedItem.ToString();
 
             User newUser = new User();
             newUser.FirstName = firstName;
