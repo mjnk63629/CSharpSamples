@@ -101,12 +101,13 @@ namespace search
                 if (isMatched)
                 {
                     tempFruits.Add(f);
-                    listViewFruits.Items.Clear();
-                    GenerateListViewFruitsItems(tempFruits);
+
                 }
             }
-            
-            
+
+            listViewFruits.Items.Clear();
+            GenerateListViewFruitsItems(tempFruits);
+
 
         }
     }
