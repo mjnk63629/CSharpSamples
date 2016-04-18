@@ -15,7 +15,7 @@
         <TextBox x:Name="textBoxFirstName" HorizontalAlignment="Left" Height="23" Margin="127,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.587,-0.806"/>
         <TextBox x:Name="textBoxLastName" HorizontalAlignment="Left" Height="23" Margin="127,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxAge" HorizontalAlignment="Left" Height="23" Margin="127,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBoxBornYear" HorizontalAlignment="Left" Height="23" Margin="127,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.523,-0.852" BorderBrush="#FFABADB3" Background="{x:Null}" Foreground="Black"/>
+        <TextBox x:Name="textBoxBornYear" HorizontalAlignment="Left" Height="23" Margin="127,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.523,-0.852" BorderBrush="#FFABADB3" Background="White" Foreground="Black"/>
         <ComboBox x:Name="comboBoxgender" HorizontalAlignment="Left" Margin="127,252,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
             <ComboBoxItem Content="Select An Item" HorizontalAlignment="Left" Width="118.4"/>
         </ComboBox>

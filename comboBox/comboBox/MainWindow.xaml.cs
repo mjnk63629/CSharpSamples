@@ -9,7 +9,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
@@ -49,7 +48,7 @@ namespace comboBox
             {
                 age = Convert.ToInt32(textBoxAge.Text);
             }
-            catch (FormatException ex)
+            catch (FormatException )
             {
                 parseAge = true;
             }
@@ -58,13 +57,11 @@ namespace comboBox
             {
                 bornYear = Convert.ToInt32(textBoxBornYear.Text);
             }
-            catch (FormatException ex)
+            catch (FormatException )
             {
                 parseYear = true;
             }
             
-            //string gender = comboBoxgender.Text;
-
             string gender = comboBoxgender.SelectedItem.ToString();
 
 
@@ -72,21 +69,41 @@ namespace comboBox
             {
                 textBoxBornYear.BorderBrush=Brushes.Red;
                 textBoxAge.BorderBrush = Brushes.Red;
+                imageAgeError.Visibility = Visibility.Visible;
+                imageYearError.Visibility = Visibility.Visible;
                 string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(),"1.png");
                 imageAgeError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
                 imageYearError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
+                MessageBox.Show("Please Inter Valid Age And Born Year","ERROR");
                 return;
             }
             else if (parseYear)
             {
-                MessageBox.Show("Year");
+                textBoxBornYear.BorderBrush = Brushes.Red;
+                imageYearError.Visibility = Visibility.Visible;
+                string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "1.png");
+                imageYearError.Visibility = Visibility.Visible;
+                imageYearError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
+                textBoxAge.BorderBrush = Brushes.Gray;
+                imageAgeError.Visibility = Visibility.Hidden;
+                MessageBox.Show("Please Inter Valid Born Year","ERROR");
                 return;
             }
             else if (parseAge)
             {
-                MessageBox.Show("Age");
+                textBoxAge.BorderBrush = Brushes.Red;
+                string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "1.png");
+                imageAgeError.Visibility = Visibility.Visible;
+                imageAgeError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
+                textBoxBornYear.BorderBrush = Brushes.Gray;
+                imageYearError.Visibility = Visibility.Hidden;
+                MessageBox.Show("Please Inter Valid Age","ERROR");
                 return;
             }
+            textBoxBornYear.BorderBrush = Brushes.Gray;
+            textBoxAge.BorderBrush = Brushes.Gray;
+            imageAgeError.Visibility = Visibility.Hidden;
+            imageYearError.Visibility = Visibility.Hidden;
 
             User newUser = new User();
             newUser.FirstName = firstName;
@@ -106,6 +123,13 @@ namespace comboBox
               
            windowJavad.Background = Brushes.Pink;
             }
+            MessageBox.Show("sucsecfull", "suscec");
+            textBoxBornYear.Clear();
+            textBoxAge.Clear();
+            textBoxFirstName.Clear();
+            textBoxLastName.Clear();
+            comboBoxgender.SelectedIndex = 0;
+            windowJavad.Background = Brushes.White;
         }
     }
 }
