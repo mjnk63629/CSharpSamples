@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="button" Content="Browse" HorizontalAlignment="Left" Margin="423,35,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.266,0.518" Click="button_Click"/>
         <TextBox x:Name="textBoxSourcePath" HorizontalAlignment="Left" Height="23" Margin="32,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" FontSize="10.5" TextAlignment="Justify"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="238" Margin="32,73,0,0" VerticalAlignment="Top" Width="372"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="238" Margin="32,73,0,0" VerticalAlignment="Top" Width="372" ToolTip="hello"/>
 
     </Grid>
 </Window>

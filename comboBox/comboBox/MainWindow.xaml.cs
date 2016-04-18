@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Runtime.CompilerServices;
+using System.Windows.Media.Imaging;
 
 namespace comboBox
 {
@@ -31,7 +34,6 @@ namespace comboBox
             comboBoxgender.Items.Add("Male");
             comboBoxgender.Items.Add("Female");
             
-
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -41,10 +43,6 @@ namespace comboBox
 
             string firstName = textBoxFirstName.Text;
             string lastName = textBoxLastName.Text;
-<<<<<<< HEAD
-            int age = Convert.ToInt32(textBoxAge.Text);
-            int bornYear = Convert.ToInt32(textBoxBornYear.Text);
-=======
             int age=0;
             int bornYear = 0;
             try
@@ -64,9 +62,6 @@ namespace comboBox
             {
                 parseYear = true;
             }
-
-
->>>>>>> 4d47f546c4f542bf0a98d73becba92744111943e
             
             //string gender = comboBoxgender.Text;
 
@@ -75,7 +70,11 @@ namespace comboBox
 
             if (parseAge && parseYear)
             {
-                MessageBox.Show("Hardo");
+                textBoxBornYear.BorderBrush=Brushes.Red;
+                textBoxAge.BorderBrush = Brushes.Red;
+                string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(),"1.png");
+                imageAgeError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
+                imageYearError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
                 return;
             }
             else if (parseYear)

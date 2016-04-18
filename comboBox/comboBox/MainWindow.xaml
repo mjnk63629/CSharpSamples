@@ -15,11 +15,13 @@
         <TextBox x:Name="textBoxFirstName" HorizontalAlignment="Left" Height="23" Margin="127,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.587,-0.806"/>
         <TextBox x:Name="textBoxLastName" HorizontalAlignment="Left" Height="23" Margin="127,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxAge" HorizontalAlignment="Left" Height="23" Margin="127,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBoxBornYear" HorizontalAlignment="Left" Height="23" Margin="127,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.523,-0.852"/>
+        <TextBox x:Name="textBoxBornYear" HorizontalAlignment="Left" Height="23" Margin="127,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.523,-0.852" BorderBrush="#FFABADB3" Background="{x:Null}" Foreground="Black"/>
         <ComboBox x:Name="comboBoxgender" HorizontalAlignment="Left" Margin="127,252,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
             <ComboBoxItem Content="Select An Item" HorizontalAlignment="Left" Width="118.4"/>
         </ComboBox>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="410,273,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Image x:Name="imageAgeError" HorizontalAlignment="Left" Height="25" Margin="270,130,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.81,-0.472" ToolTip="numbers only"/>
+        <Image x:Name="imageYearError" HorizontalAlignment="Left" Height="26" Margin="270,183,0,0" VerticalAlignment="Top" Width="27" ToolTip="numbers only"/>
 
     </Grid>
 </Window>
