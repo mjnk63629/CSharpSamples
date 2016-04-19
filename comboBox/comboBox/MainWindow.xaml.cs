@@ -63,17 +63,14 @@ namespace comboBox
             }
             
             string gender = comboBoxgender.SelectedItem.ToString();
-
-
             if (parseAge && parseYear)
             {
                 textBoxBornYear.BorderBrush=Brushes.Red;
                 textBoxAge.BorderBrush = Brushes.Red;
                 imageAgeError.Visibility = Visibility.Visible;
                 imageYearError.Visibility = Visibility.Visible;
-                string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(),"1.png");
-                imageAgeError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
-                imageYearError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
+                imageYearError.Source = new BitmapImage(new Uri("pack://application:,,/Resources/1.png"));
+                imageAgeError.Source = new BitmapImage(new Uri("pack://application:,,/Resources/1.png"));
                 MessageBox.Show("Please Inter Valid Age And Born Year","ERROR");
                 return;
             }
@@ -81,9 +78,8 @@ namespace comboBox
             {
                 textBoxBornYear.BorderBrush = Brushes.Red;
                 imageYearError.Visibility = Visibility.Visible;
-                string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "1.png");
                 imageYearError.Visibility = Visibility.Visible;
-                imageYearError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
+                imageYearError.Source = new BitmapImage(new Uri("pack://application:,,/Resources/1.png"));
                 textBoxAge.BorderBrush = Brushes.Gray;
                 imageAgeError.Visibility = Visibility.Hidden;
                 MessageBox.Show("Please Inter Valid Born Year","ERROR");
@@ -92,9 +88,8 @@ namespace comboBox
             else if (parseAge)
             {
                 textBoxAge.BorderBrush = Brushes.Red;
-                string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "1.png");
                 imageAgeError.Visibility = Visibility.Visible;
-                imageAgeError.Source = new BitmapImage(new Uri(filePath, UriKind.RelativeOrAbsolute));
+                imageAgeError.Source = new BitmapImage(new Uri("pack://application:,,/Resources/1.png"));
                 textBoxBornYear.BorderBrush = Brushes.Gray;
                 imageYearError.Visibility = Visibility.Hidden;
                 MessageBox.Show("Please Inter Valid Age","ERROR");
