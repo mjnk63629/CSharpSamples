@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dialog"
         mc:Ignorable="d"
-        Title="DialogAddContact" Height="300" Width="300"
+        Title="DialogAddContact" Height="239.268" Width="427.317"
         WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="label" Content="First Name" HorizontalAlignment="Left" Margin="27,23,0,0" VerticalAlignment="Top"/>
@@ -14,8 +14,8 @@
         <TextBox x:Name="textBoxFirstName" HorizontalAlignment="Left" Height="23" Margin="122,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxLastName" HorizontalAlignment="Left" Height="23" Margin="122,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBoxNumber" HorizontalAlignment="Left" Height="23" Margin="122,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="47,197,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.203,-2.347" Click="ButtonAdd_OnClick"/>
-        <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="167,197,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCancel_OnClick"/>
+        <Button x:Name="buttonAdd" Content="Add" HorizontalAlignment="Left" Margin="47,197,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.203,-2.347" Click="ButtonAdd_OnClick" IsDefault="True"/>
+        <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="167,197,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCancel_OnClick" IsCancel="True"/>
 
     </Grid>
 </Window>
