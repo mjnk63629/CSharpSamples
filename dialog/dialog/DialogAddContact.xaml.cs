@@ -26,11 +26,6 @@ namespace dialog
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
-
         public string firstName
         {
             get { return textBoxFirstName.Text; }
@@ -44,6 +39,28 @@ namespace dialog
         public string number
         {
             get { return textBoxNumber.Text; }
+        }
+
+        private void ButtonAdd_OnClick(object sender, RoutedEventArgs e)
+        {
+            string firstName = textBoxFirstName.Text;
+            string lastName = textBoxLastName.Text;
+            string number = textBoxNumber.Text;
+
+
+            Contact newContact=new Contact();
+            newContact.FirsttName = firstName;
+            newContact.LastName = lastName;
+            newContact.Number = number;
+
+            Statics.Contacts.Add(newContact);
+
+            DialogResult = true;
+        }
+
+        private void ButtonCancel_OnClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

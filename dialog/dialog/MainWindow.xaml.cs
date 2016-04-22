@@ -52,17 +52,22 @@ namespace dialog
         private void buttonAddNewContact_Click(object sender, RoutedEventArgs e)
         {
             DialogAddContact winAddContact = new DialogAddContact();
-            winAddContact.Show();
-            if (DialogAddContact.DialogResult == true)
+            winAddContact.ShowDialog();
+            if (winAddContact.DialogResult == true)
             {
-                
-                
-               
+                // new contact added
+                // we should refresh the listView
+
+                listViewContacts.Items.Clear();
+
+                foreach (Contact contact in Statics.Contacts)
+                {
+                    string contactList = string.Format("First Name: {0},Last Name: {1},Number: {2}", contact.FirsttName,
+                        contact.LastName, contact.Number);
+                    listViewContacts.Items.Add(contactList);
+                }
             }
           
-
-
-
         }
     }
 }
