@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace dialog
 {
-    class Contact
+    public class Contact
     {
         private string _firsttName;
         private string _lastName;

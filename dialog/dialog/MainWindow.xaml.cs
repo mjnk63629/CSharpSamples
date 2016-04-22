@@ -52,6 +52,11 @@ namespace dialog
         private void buttonAddNewContact_Click(object sender, RoutedEventArgs e)
         {
             DialogAddContact winAddContact = new DialogAddContact();
+
+            winAddContact.ContactAdded += WinAddContact_ContactAdded;
+
+            winAddContact.ContactAddedCustom += WinAddContact_ContactAddedCustom;
+
             winAddContact.ShowDialog();
             if (winAddContact.DialogResult == true)
             {
@@ -68,6 +73,38 @@ namespace dialog
                 }
             }
           
+        }
+
+        private void WinAddContact_ContactAddedCustom(object sender, ContactArgs e)
+        {
+            // first we should add new contact to database ==> Static.Contact
+            // then referesh the listView Items
+
+            Contact newContact = e.Contact;
+            Statics.Contacts.Add(newContact);
+
+            listViewContacts.Items.Clear();
+
+            foreach (Contact contact in Statics.Contacts)
+            {
+                string contactList = string.Format("First Name: {0},Last Name: {1},Number: {2}", contact.FirsttName,
+                    contact.LastName, contact.Number);
+                listViewContacts.Items.Add(contactList);
+            }
+        }
+
+        private void WinAddContact_ContactAdded(object sender, EventArgs e)
+        {
+            // we just need to refresh the listView Items
+
+            listViewContacts.Items.Clear();
+
+            foreach (Contact contact in Statics.Contacts)
+            {
+                string contactList = string.Format("First Name: {0},Last Name: {1},Number: {2}", contact.FirsttName,
+                    contact.LastName, contact.Number);
+                listViewContacts.Items.Add(contactList);
+            }
         }
     }
 }

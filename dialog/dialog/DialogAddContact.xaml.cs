@@ -19,11 +19,13 @@ namespace dialog
     /// </summary>
     public partial class DialogAddContact : Window
     {
+
+        public event EventHandler ContactAdded;
+        public event EventHandler<ContactArgs> ContactAddedCustom; 
+
         public DialogAddContact()
         {
             InitializeComponent();
-           
-
         }
 
         public string firstName
@@ -61,6 +63,50 @@ namespace dialog
         private void ButtonCancel_OnClick(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
+        }
+
+        private void buttonAddWithEvent_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = textBoxFirstName.Text;
+            string lastName = textBoxLastName.Text;
+            string number = textBoxNumber.Text;
+
+
+            Contact newContact = new Contact();
+            newContact.FirsttName = firstName;
+            newContact.LastName = lastName;
+            newContact.Number = number;
+
+            Statics.Contacts.Add(newContact);
+
+            OnContactAdded();
+        }
+
+        private void buttonAddWithCustomEvent_Click(object sender, RoutedEventArgs e)
+        {
+            string firstName = textBoxFirstName.Text;
+            string lastName = textBoxLastName.Text;
+            string number = textBoxNumber.Text;
+
+
+            Contact newContact = new Contact();
+            newContact.FirsttName = firstName;
+            newContact.LastName = lastName;
+            newContact.Number = number;
+
+            //Statics.Contacts.Add(newContact);
+
+            OnContactAddedCustom(new ContactArgs(newContact));
+        }
+
+        protected virtual void OnContactAdded()
+        {
+            ContactAdded?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected virtual void OnContactAddedCustom(ContactArgs e)
+        {
+            ContactAddedCustom?.Invoke(this, e);
         }
     }
 }
