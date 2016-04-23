@@ -55,9 +55,14 @@ namespace dialog
 
             winAddContact.ContactAdded += WinAddContact_ContactAdded;
 
-            winAddContact.ContactAddedCustom += WinAddContact_ContactAddedCustom;
 
+            //winAddContact.ContactAdded -= WinAddContact_ContactAdded;
+
+           winAddContact.ContactAddedCustom += WinAddContact_ContactAddedCustom;
+
+            //winAddContact.Show();
             winAddContact.ShowDialog();
+
             if (winAddContact.DialogResult == true)
             {
                 // new contact added

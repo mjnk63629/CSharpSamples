@@ -21,7 +21,7 @@ namespace dialog
     {
 
         public event EventHandler ContactAdded;
-        public event EventHandler<ContactArgs> ContactAddedCustom; 
+        public event EventHandler<ContactArgs> ContactAddedCustom;
 
         public DialogAddContact()
         {
@@ -96,7 +96,11 @@ namespace dialog
 
             //Statics.Contacts.Add(newContact);
 
-            OnContactAddedCustom(new ContactArgs(newContact));
+            //ContactArgs contactArgs=new ContactArgs(newContact);
+            ContactArgs contactArgs=new ContactArgs();
+            contactArgs.Contact = newContact;
+
+            OnContactAddedCustom(contactArgs);
         }
 
         protected virtual void OnContactAdded()

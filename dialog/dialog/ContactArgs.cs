@@ -19,5 +19,7 @@ namespace dialog
         }
 
         public Contact Contact { get; set; }
+
+        //public int Age { get; set; }
     }
 }
