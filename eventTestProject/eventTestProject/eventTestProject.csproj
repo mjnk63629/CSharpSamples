@@ -56,6 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TextBoxArgs.cs" />
+    <Compile Include="TextContent.cs" />
     <Page Include="editText.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -27,6 +27,9 @@ namespace eventTestProject
         }
         
         public event EventHandler textAdded;
+        public event EventHandler<TextBoxArgs> textAddedcustom;
+              
+             
 
         
 
@@ -44,6 +47,19 @@ namespace eventTestProject
             tw.Close();
             OnTextAdded();
             this.Close();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+          TextBoxArgs textBoxArgs = new TextBoxArgs();
+            TextContent content=new TextContent();
+            content.Content=te
+            OnTextAddedcustom(content);
+        }
+
+        protected virtual void OnTextAddedcustom(TextBoxArgs e)
+        {
+            textAddedcustom?.Invoke(this, e);
         }
     }
 }
