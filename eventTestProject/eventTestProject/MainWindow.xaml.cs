@@ -50,8 +50,15 @@ namespace eventTestProject
             editText editTextwin = new editText();
             editTextwin.Show();
             editTextwin.textAdded += EditTextwin_textAdded;
-            
+            editTextwin.textAddedcustom += EditTextwin_textAddedcustom;
 
+        }
+
+        private void EditTextwin_textAddedcustom(object sender, TextBoxArgs e)
+        {
+            string escapeChar = "\r\n";
+            string newText = e.Content.Content + escapeChar;
+            textBoxReadText.Text +=newText;
         }
 
         private void EditTextwin_textAdded(object sender, EventArgs e)

@@ -51,10 +51,12 @@ namespace eventTestProject
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-          TextBoxArgs textBoxArgs = new TextBoxArgs();
-            TextContent content=new TextContent();
-            content.Content=te
-            OnTextAddedcustom(content);
+            TextBoxArgs textBoxArgs = new TextBoxArgs();
+            TextContent textContent=new TextContent();
+            textContent.Content = textBoxEditText.Text;
+            textBoxArgs.Content = textContent;
+            
+            OnTextAddedcustom(textBoxArgs);
         }
 
         protected virtual void OnTextAddedcustom(TextBoxArgs e)
