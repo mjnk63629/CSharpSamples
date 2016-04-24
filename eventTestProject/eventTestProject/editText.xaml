@@ -9,7 +9,7 @@
     <Grid>
         <TextBox x:Name="textBoxEditText" HorizontalAlignment="Left" Height="103" Margin="10,18,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274"/>
         <Button x:Name="button" Content="Add &amp; Save" HorizontalAlignment="Left" Margin="19,162,0,0" VerticalAlignment="Top" Width="75" IsDefault="True" Click="button_Click"/>
-        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="199,232,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+        <Button x:Name="button1" Content="Cancel" HorizontalAlignment="Left" Margin="199,232,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Click="button1_Click"/>
         <Button x:Name="button2" Content="Add" HorizontalAlignment="Left" Margin="199,162,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
 
     </Grid>

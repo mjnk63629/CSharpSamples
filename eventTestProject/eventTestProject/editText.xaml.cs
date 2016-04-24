@@ -57,11 +57,18 @@ namespace eventTestProject
             textBoxArgs.Content = textContent;
             
             OnTextAddedcustom(textBoxArgs);
+            textBoxEditText.Clear();
+            
         }
 
         protected virtual void OnTextAddedcustom(TextBoxArgs e)
         {
             textAddedcustom?.Invoke(this, e);
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

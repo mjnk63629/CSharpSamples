@@ -65,5 +65,15 @@ namespace eventTestProject
         {
             textBoxReadText.Text = File.ReadAllText(filePath);
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            string finalText = textBoxReadText.Text;
+            string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "text.txt");
+            TextWriter tw = new StreamWriter(filePath, true);
+            tw.Write(finalText);
+            tw.Close();
+            MessageBox.Show("text File Was Saved Succesfuly", "success");
+        }
     }
 }
