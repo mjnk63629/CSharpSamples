@@ -251,6 +251,7 @@ namespace MiladiToShamsi
                 MessageBox.Show("لطفا روز را به صورت صحیح (عددی) وارد نمائید.", "Error");
                 return;
             }
+            //baraye control kabise boodan ya naboodane sal
             if (getDate.Year < 1000)
             {
                 textBoxShaYear.BorderBrush = Brushes.Red;
