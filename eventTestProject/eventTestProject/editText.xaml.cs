@@ -58,7 +58,8 @@ namespace eventTestProject
             
             OnTextAddedcustom(textBoxArgs);
             textBoxEditText.Clear();
-            
+
+
         }
 
         protected virtual void OnTextAddedcustom(TextBoxArgs e)
@@ -70,5 +71,7 @@ namespace eventTestProject
         {
             this.Close();
         }
+
+        
     }
 }
