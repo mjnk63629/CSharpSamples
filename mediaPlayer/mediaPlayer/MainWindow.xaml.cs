@@ -113,7 +113,7 @@ namespace mediaPlayer
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            if (mediaElement.Volume == 100)
+            if (mediaElement.Volume > 0)
             {
                 mediaElement.Volume = 0;
                 buttonMute.ToolTip = "UnMute";

@@ -37,8 +37,8 @@
         <Button  HorizontalAlignment="Left" Margin="45,329,0,0" VerticalAlignment="Top" Width="57" Height="40" ToolTip="Open " Click="Button_Click_1">
             <Image Source="Images/openFile.png" Stretch="Fill"></Image>
         </Button>
-        <MediaElement x:Name="mediaElement" HorizontalAlignment="Left" Height="267" Margin="10,0,0,0" VerticalAlignment="Top" Width="498" LoadedBehavior="Manual" MediaOpened="mediaElement_MediaOpened"/>
-        <Slider x:Name="slider1" HorizontalAlignment="Left" Margin="431,299,0,0" VerticalAlignment="Top" Width="77" Height="30" Value="100" ValueChanged="slider1_ValueChanged" Maximum="100"/>
+        <MediaElement x:Name="mediaElement" HorizontalAlignment="Center" Height="267" Margin="10,5,10,142.8" VerticalAlignment="Center" Width="498" LoadedBehavior="Manual" MediaOpened="mediaElement_MediaOpened"/>
+        <Slider x:Name="slider1" HorizontalAlignment="Left" Margin="431,299,0,0" VerticalAlignment="Top" Width="77" Height="30" Value="50" ValueChanged="slider1_ValueChanged" Maximum="100"/>
 
 
     </Grid>
