@@ -75,6 +75,7 @@ namespace mediaPlayer
             dispatcherTimer.Tick += new EventHandler(timerTick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
+            mediaElement.Play();
         }
         void timerTick(object sender, EventArgs e)
         {
