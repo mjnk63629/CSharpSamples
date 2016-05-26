@@ -62,6 +62,7 @@ namespace mediaPlayer
             selectSong.AddExtension = true;
             selectSong.DefaultExt = "*.*";
             selectSong.Filter = "audio Files(*.*|*.*";
+            selectSong.Multiselect = true;
             selectSong.ShowDialog();
             try
             {
@@ -76,6 +77,12 @@ namespace mediaPlayer
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
             mediaElement.Play();
+            
+                foreach (string file in selectSong.FileNames)
+                {
+                    listBox.Items.Add(file);
+                }
+            
         }
         void timerTick(object sender, EventArgs e)
         {
@@ -94,6 +101,19 @@ namespace mediaPlayer
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            int nextSong = 0;
+            if ((listBox.SelectedIndex >= 0) && (listBox.SelectedIndex < (listBox.Items.Count - 1)))
+                nextSong = listBox.SelectedIndex + 1;
+            listBox.SelectedIndex = nextSong;
+            string nextFilePath = listBox.Items[nextSong].ToString();
+            try
+            {
+                mediaElement.Source = new Uri(nextFilePath);
+            }
+            catch
+            {
+                new NullReferenceException("Error");
+            }
             mediaElement.Play();
         }
 
@@ -132,5 +152,12 @@ namespace mediaPlayer
         {
             mediaElement.Volume = slider1.Value;
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            mediaElement.Play();
+            
+        }
+        }
     }
-}
+
