@@ -31,7 +31,8 @@
             <Label x:Name="label5" Content="Add New Car" HorizontalAlignment="Left" Margin="42,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
             <TextBox x:Name="textBoxYear" HorizontalAlignment="Left" Height="23" Margin="140,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </Grid>
-        
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="475,235,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding Path=listViewCars}" DisplayMemberPath="model" />
+
 
     </Grid>
 </Window>
